@@ -1,0 +1,607 @@
+/****************************************************************************
+ * DoomMake Script and Defines Library
+ * There is little reason to change this file.
+ ****************************************************************************/
+
+// WAD Files Pattern
+#define REGEX_WADFILES      `.*\.([wW][aA][dD])`
+
+/* ------------------------------------------------------------------------ */
+
+/**
+ * Return a property by its key, or def if empty.
+ */
+function prop(key, def) {
+	out = properties(key);
+	return empty(out) ? def : out;
+}
+
+/* ------------------------------------------------------------------------ */
+// Project-specific.
+
+#define PROP_PROJECTNAME        "doommake.project.name"
+#define DEFAULT_PROJECTNAME     "project"
+#define PROP_PROJECTENCODING    "doommake.project.encoding"
+
+/**
+ * Returns the project name.
+ */
+function getProjectName() {
+	return prop(PROP_PROJECTNAME, DEFAULT_PROJECTNAME);
+}
+
+/**
+ * Returns the project encoding.
+ */
+function getProjectEncoding() {
+	return prop(PROP_PROJECTENCODING, null);
+}
+
+/**
+ * Return the project WAD file name.
+ */
+function getProjectWAD() {
+	return getProjectName() + ".wad"; 
+}
+
+/**
+ * Return the project PK3 file name.
+ */
+function getProjectPK3() {
+	return getProjectName() + ".pk3"; 
+}
+
+/**
+ * Return the project PKE file name.
+ */
+function getProjectPKE() {
+	return getProjectName() + ".pke"; 
+}
+
+/**
+ * Return the project TXT file name.
+ */
+function getProjectTXT() {
+	return getProjectName() + ".txt"; 
+}
+
+/**
+ * Return the project Zip file name.
+ */
+function getProjectZip() {
+	return getProjectName() + ".zip"; 
+}
+
+/* ------------------------------------------------------------------------ */
+// Library file (trimmed IWAD for CI).
+
+#define PROP_LIBWAD         "doommake.lib"
+
+function getLibWAD() {
+	return prop(PROP_LIBWAD, null); 
+}
+
+
+/* ------------------------------------------------------------------------ */
+// Local-specific.
+
+#define PROP_BUILDDIR       "doommake.dir.build"
+#define DEFAULT_BUILDDIR    "build"
+#define PROP_DISTDIR        "doommake.dir.dist"
+#define DEFAULT_DISTDIR     "dist"
+#define PROP_SRCDIR         "doommake.dir.src"
+#define DEFAULT_SRCDIR      "src"
+#define PROP_IWADPATH       "doommake.iwad"
+
+/**
+ * Return the build directory path.
+ */
+function getBuildDirectory() {
+	return prop(PROP_BUILDDIR, DEFAULT_BUILDDIR); 
+}
+
+/**
+ * Return the distribution directory path.
+ */
+function getDistDirectory() {
+	return prop(PROP_DISTDIR, DEFAULT_DISTDIR); 
+}
+
+/**
+ * Return the source directory path.
+ */
+function getSourceDirectory() {
+	return prop(PROP_SRCDIR, DEFAULT_SRCDIR); 
+}
+
+/**
+ * Return the IWAD from properties, or fall back to the LIB IWAD if not
+ * specified.
+ */
+function getIWAD() {
+	return prop(PROP_IWADPATH, null) ?? getLibWAD(); 
+}
+
+
+/* ------------------------------------------------------------------------ */
+// Build lock.
+
+#define PROP_LOCKFILE          "doommake.file.lock"
+#define DEFAULT_LOCKFILE       "lock.json"
+
+/**
+ * Return the lock file from properties.
+ */
+function getLockFile() {
+	return prop(PROP_LOCKFILE, DEFAULT_LOCKFILE); 
+}
+
+/**
+ * Returns the build lock JSON file path.
+ */
+function getBuildLockFile() {
+	return getBuildDirectory() + "/" + getLockFile();
+}
+
+/**
+ * Initialize the build lock.
+ */
+check function initBuildLock() {
+	if (typeof(global::lock) === "null") {
+		lockfile = file(getBuildLockFile());
+		global::lock = fileExists(lockfile) ? readjson(lockfile) : {};
+		if (typeof(global::lock.dirHashes) !== "map") {
+			global::lock.dirHashes = {};
+		}
+	}
+	return global::lock;
+}
+
+/**
+ * Gets the directory hash string.
+ * Returns a string of hexadecimal characters.
+ */
+check function getDirectoryHash(dirpath) {
+	return hashdir(dirpath, true)->bufstr();
+}
+
+/**
+ * Checks if a directory changed since last build.
+ * Returns error if an error happened.
+ * Returns null if no change.
+ * Returns a hash string if a change happened.
+ */
+check function directoryHasChanged(dirpath) {
+	lockhash = initBuildLock().dirHashes->mapget(dirpath);
+	dirhash = getDirectoryHash(dirpath);
+	return (lockhash === null || lockhash !== dirhash) ? dirhash : null;
+}
+
+/**
+ * Sets if a directory changed since last build.
+ * Returns error if an error happened.
+ * Returns null if no change.
+ */
+check function storeDirectoryChanged(dirpath, hash) {
+	lock = initBuildLock();
+	(lock.dirHashes)->mapset(dirpath, hash);
+	file(getBuildLockFile())->writejson(lock, "\t");
+}
+
+/**
+ * Initialize the build state.
+ */
+check function initBuildState() {
+	if (global::buildState === null) {
+		global::buildState = [];
+	}
+	return global::buildState;
+}
+
+/**
+ * Sets if a target was built.
+ */
+check function setBuilt(target) {
+	initBuildState()->setAdd(target);
+}
+
+/**
+ * Checks if a target was built.
+ */
+check function wasBuilt(target) {
+	return initBuildState()->setContains(target);
+}
+
+
+/****************************************************************************
+ * Checks if all provided file paths exist, 
+ * AND if all of the specified targets were NOT built.
+ *
+ * If both conditions are true, this returns true. This is used for checking
+ * if a build target needs running.
+ * 
+ * filePaths: The list of files to verify file existence.
+ * builtTargetList: The list of built target names to check for.
+ ****************************************************************************/
+function checkFileExistenceAndBuildStatuses(filePaths, builtTargetList) {
+	each (path : filePaths) {
+		if (!fileExists(path)) {
+			return false;
+		}
+	}
+	each (target : builtTargetList) {
+		if (wasBuilt(target)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+/* ------------------------------------------------------------------------ */
+// Build-specific.
+
+#define PROP_ASSETWAD         "doommake.file.assets"
+#define DEFAULT_ASSETWAD      "assets.wad"
+#define PROP_MAPSWAD          "doommake.file.maps"
+#define DEFAULT_MAPSWAD       "maps.wad"
+#define PROP_MAPTEXWAD        "doommake.file.maptex"
+#define DEFAULT_MAPTEXWAD     "maptex.wad"
+#define PROP_TEXWAD           "doommake.file.textures"
+#define DEFAULT_TEXWAD        "textures.wad"
+#define PROP_PATCHFILE        "doommake.file.patch"
+#define DEFAULT_PATCHFILE     "dehacked.deh"
+#define PROP_PATCHFILE_SRC    "doommake.file.patch.src"
+#define DEFAULT_PATCHFILE_SRC "decohack.dh"
+
+/**
+ * Return the output asset wad.
+ */
+function getAssetsWAD() {
+	return prop(PROP_ASSETWAD, DEFAULT_ASSETWAD); 
+}
+
+/**
+ * Returns the output map wad.
+ */
+function getMapsWAD() {
+	return prop(PROP_MAPSWAD, DEFAULT_MAPSWAD); 
+}
+
+/**
+ * Return the output textures WAD.
+ */
+function getTextureWAD() {
+	return prop(PROP_TEXWAD, DEFAULT_TEXWAD); 
+}
+
+/**
+ * Return the output map textures WAD.
+ */
+function getMapTextureWAD() {
+	return prop(PROP_MAPTEXWAD, DEFAULT_MAPTEXWAD);
+}
+
+/**
+ * Return the output patch file name.
+ */
+function getPatchFile() {
+	return prop(PROP_PATCHFILE, DEFAULT_PATCHFILE); 
+}
+
+/**
+ * Return the output patch source file name.
+ */
+function getPatchSourceOutputFile() {
+	return prop(PROP_PATCHFILE_SRC, DEFAULT_PATCHFILE_SRC); 
+}
+
+
+/****************************************************************************
+ * Initialize build.
+ ****************************************************************************/
+function initBuild() {
+	verifydirs(getBuildDirectory());
+}
+
+/****************************************************************************
+ * Writes a single palette from raw data to image data.
+ * 
+ * paletteDataBuf: the palette data buffer (should be 768 bytes, set to beginning).
+ * targetImage: the [256 x 1] image to write the colors to.
+ ****************************************************************************/
+function writePaletteIntoImage(paletteDataBuf, targetImage) { 
+	for (i = 0; i < 256; i += 1) {
+		r = paletteDataBuf->bufgetbyte();
+		g = paletteDataBuf->bufgetbyte();
+		b = paletteDataBuf->bufgetbyte();
+		targetimage->imageset(i, 0, color(r, g, b, 255));
+	}
+}
+
+/****************************************************************************
+ * Writes a single colormap from raw data to image data.
+ * 
+ * colormapDataBuf: the colormap data buffer (should be 256 bytes, set to beginning).
+ * paletteImage: the palette image.
+ * targetImage: the [256 x 1] image to write the colors to.
+ ****************************************************************************/
+function writeColormapIntoImage(colormapDataBuf, paletteImage, targetImage) { 
+	for (i = 0; i < 256; i += 1) {
+		index = colormapDataBuf->bufgetbyte();
+		targetimage->imageset(i, 0, paletteImage->imageget(index, 0));
+	}
+}
+
+/****************************************************************************
+ * Exports a palette to an image. 
+ * 
+ * wad: the open WAD to read from.
+ * lumpname: the lump name of the palette data.
+ * RETURNS: the image. 
+ ****************************************************************************/
+check function exportPaletteToImage(wad, lumpname) {
+
+	playpalBuf = wad->waddata(lumpname);
+	
+	// make buffer for single palette.
+	paletteDataBuf = bufnew(768);
+	
+	paletteCount = playpalBuf->length() / 768;
+	paletteImage = image(256, paletteCount);
+	singlePaletteImage = image(256, 1);
+	
+	i = 0;
+	while (i < paletteCount) {
+		paletteDataBuf->bufsetpos(0);
+		bufread(paletteDataBuf, playpalBuf, 768, 0);
+		writePaletteIntoImage(paletteDataBuf, singlePaletteImage);
+		paletteImage->imagedraw(singlePaletteImage, 0, i, "replace");
+		i += 1;
+	}
+
+	return paletteImage;
+}
+
+/****************************************************************************
+ * Exports a colormap to an image. 
+ * 
+ * wad: the open WAD to read from.
+ * lumpname: the lump name of the colormap data.
+ * paletteImage: the image to use for palette lookups (uses only first row, Y = 0).
+ * RETURNS: the image. 
+ ****************************************************************************/
+check function exportColormapToImage(wad, lumpname, paletteImage) {
+	
+	colormapBuf = wad->waddata(lumpname);
+	
+	// make buffer for single colormap.
+	colormapDataBuf = bufnew(256);
+	
+	colormapCount = colormapBuf->length() / 256;
+	colormapImage = image(256, colormapCount);
+	singleColormapImage = image(256, 1);
+	
+	i = 0;
+	while (i < colormapCount) {
+		colormapDataBuf->bufsetpos(0);
+		bufread(colormapDataBuf, colormapBuf, 256, 0);
+		writeColormapIntoImage(colormapDataBuf, paletteImage, singleColormapImage);
+		colormapImage->imagedraw(singleColormapImage, 0, i, "replace");
+		i += 1;
+	}
+
+	return colormapImage;
+}
+
+/****************************************************************************
+ * Fetches the source for the palette used for image conversion.
+ * Attempts to find the default palette via the global asset folder.
+ ****************************************************************************/
+// Palette source file path.
+#define PALETTE_ASSET_SRC "/assets/_global/playpal"
+
+check function getConvertPaletteSource() {
+
+	srcdir = getSourceDirectory();
+
+	paths = [
+		srcdir + "/playpal.pal",
+		srcdir + "/playpal.lmp",
+		srcdir + PALETTE_ASSET_SRC + ".pal",
+		srcdir + PALETTE_ASSET_SRC + ".lmp"
+	];
+	
+	each (path : paths) {
+		if (fileexists(path)) {
+			println("Using palette found in `" + path + "`...");
+			return path;
+		}
+	}
+	
+	baseIwadPath = getIwad();
+	if (empty(baseIwadPath))
+		return error("NoIWAD", "An IWAD for this project was not set in properties: " + PROP_IWADPATH);
+	println("Using palette found in IWAD `" + baseIwadPath + "`...");
+	return baseIwadPath;
+}
+
+/****************************************************************************
+ * Calls DImgConvert and throws an error if something bad happens.
+ * 
+ * sourceDir: The source directory path.
+ * targetDir: The target directory path.
+ * mode: One of 'palettes', 'colormaps', 'graphics', 'flats'. Default: 'graphics'
+ * recurse: true to recurse directory, false to not. Default = true.
+ ****************************************************************************/
+check function convertimg(sourceDir, targetDir, mode, recurse) {
+	if (empty(sourceDir))
+		return error("ToolError", "Source directory path not specified.");
+	if (empty(targetDir))
+		return error("ToolError", "Target directory path not specified.");
+		
+	if (tool::dimgconvert({
+		modeType: mode ?? "graphics",
+		paletteSourcePath: mode !== "palettes" ? file(getConvertPaletteSource()) : null,
+		sourcePath: file(sourceDir), 
+		outputPath: file(targetDir),
+		recursive: recurse ?? true,
+		verbose: false
+	})) return error("ToolError", "DImgConvert threw an error.");
+}
+
+/****************************************************************************
+ * Calls DMXConvert and throws an error if something bad happens.
+ * 
+ * sourceDir: The source directory path.
+ * targetDir: The target directory path.
+ ****************************************************************************/
+check function convertdmx(sourceDir, targetDir) {
+
+	files = filelist(sourceDir);
+	if (empty(files)) {
+		println("No sounds to convert.");
+		return;
+	}
+
+	if (tool::dmxconvert({
+		files: files,
+		outputdirectory: file(targetDir),
+		verbose: false
+	})) return error("ToolError", "DMXConvert threw an error.");
+}
+
+/****************************************************************************
+ * Calls DECOHack and throws an error if something bad happens.
+ * 
+ * rootFilePath: Path to root file.
+ * outFilePath: Output file.
+ * budget: If true, output budget. False, don't.
+ * outSourceFilePath: Combined source output file.
+ ****************************************************************************/
+function decohack(rootFilePath, outFilePath, budget, outSourceFilePath) {
+	if (empty(rootFilePath))
+		return error("ToolError", "Root file not specified.");
+	if (empty(outFilePath))
+		return error("ToolError", "Output file path not specified.");
+	if (budget === null)
+		return error("ToolError", "Budget flag is null.");
+		
+	if (tool::decohack({
+		inFile: rootFilePath,
+		inCharsetName: getProjectEncoding(),
+		outFile: outFilePath,
+		outputBudget: budget,
+		outSourceFile: outSourceFilePath
+	})) return error("ToolError", "DECOHack threw an error.");
+}
+
+/****************************************************************************
+ * Calls WadMerge and throws an error if something bad happens.
+ * 
+ * scriptFilePath: Path to script file to execute.
+ * args: Script arguments.
+ ****************************************************************************/
+function wadmerge(scriptFilePath, args) {
+	if (args === null)
+		args = [];
+	if (empty(scriptFilePath))
+		return error("ToolError", "Script file not specified.");
+		
+	if (tool::wadmerge({
+		inputFile: file(scriptFilePath),
+		inputCharsetName: getProjectEncoding(), 
+		args: args
+	})) return error("ToolError", "WadMerge threw an error.");
+}
+
+/****************************************************************************
+ * Calls WadScript and throws an error if something bad happens.
+ * 
+ * scriptFilePath: Path to script file to execute.
+ * entryPoint: the entry point name.
+ * args: Script arguments.
+ ****************************************************************************/
+function wadscript(scriptFilePath, entryPoint, args) {
+	if (args === null)
+		args = [];
+	if (entryPoint === null)
+		entryPoint = "main";
+	if (empty(scriptFilePath))
+		return error("ToolError", "Script file not specified.");
+		
+	if (tool::wadscript({
+		scriptFile: file(scriptFilePath),
+		scriptCharsetName: getProjectEncoding(),
+		entryPointName: entryPoint,
+		args: args
+	})) return error("ToolError", "WadMerge threw an error.");
+}
+
+/****************************************************************************
+ * Merges a set of WADs together into one.
+ *
+ * outputWadFile: the output WAD file path.
+ * wadList: a list of WAD files.
+ ****************************************************************************/
+function mergeWads(outputWadFile, wadList) {
+	check (err) {
+		destwad = wadfilecreate(outputWadFile);
+		each (w : wadList) {
+			check (err) {
+				srcwad = wadfile(w);
+				println("Merging WAD `" + w + "`...");
+				destWad->wadimport(srcwad, srcwad->wadentries());
+			}
+			close(srcwad);
+			if (err)
+				return err;
+		}
+	}
+	close(destwad);
+	if (err)
+		return err;
+
+	println("Created WAD `" + outputWadFile->file()->filepath() + "`.");
+}
+
+/****************************************************************************
+ * Extracts used textures from a set of map-containing WADs from a set of 
+ * texture WADs and puts them in an output WAD.
+ * 
+ * baseIwadPath: Path to the base IWAD file.
+ * mapWadPathList: The list of map WADs to inspect.
+ * textureWadPathList: The list of texture WADs to pull from.
+ * outputWadPath: The path to the output WAD file.
+ ****************************************************************************/
+function extractUsedMapTextures(baseIwadPath, mapWadPathList, textureWadPathList, outputWadPath) {
+	// Output buffer.
+	buf = bufnew(96 * 1024); // 96k
+	
+	if (tool::wtexscan({
+		stdout: bosopen(buf), 
+		wadfiles: mapWadPathList
+	})) return error("ToolError", "WTexScan threw an error.");
+	
+	// reset buffer cursor for read.
+	buf->bufsetpos(0);
+	
+	if (tool::wtexport({
+		stdin: bisopen(buf), 
+		texturewads: textureWadPathList,
+		basewad: file(baseIwadPath),
+		outwad: file(outputWadPath),
+		additive: false
+	})) return error("ToolError", "WTExport threw an error.");
+	
+	println("Extracted map textures to `" + outputWadPath + "`.");
+}
+
+/****************************************************************************
+ * Zips the resulting project.
+ ****************************************************************************/
+check function zipProject(fileList) {
+	outzip = getDistDirectory() + "/" + getProjectZip();
+	println("Zipping project to " + outzip + "...");
+	zipfiles(outzip, fileList);
+}
