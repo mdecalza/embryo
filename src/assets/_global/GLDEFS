@@ -1,0 +1,31 @@
+Glow
+{
+	Flats
+	{
+		GRNLITE1
+		FLAT2
+		FLAT17
+		FLAT22
+		FLOOR1_7
+		CEIL1_2
+		CEIL1_3
+		CEIL3_4
+		CEIL3_6
+		CONS1_1
+		CONS1_5
+		CONS1_7
+		TLITE6_1
+		TLITE6_4
+		TLITE6_5
+		TLITE6_6
+	}
+
+	Texture "LAVA1", FFFEF7, 192, fullbright
+	Texture "LAVA2", FFFCEF, 192, fullbright
+	Texture "LAVA3", FFFCE8, 192, fullbright
+	Texture "LAVA4", FFFCED, 192, fullbright
+
+	Texture "NUKAGE1", 3AE20B, 8, fullbright
+	Texture "NUKAGE2", 39D50A, 8, fullbright
+	Texture "NUKAGE3", 39FF23, 8, fullbright
+}

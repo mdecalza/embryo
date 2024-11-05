@@ -1,0 +1,18 @@
+{
+  "type": "gameconf",
+  "version": "1.0.0",
+  "metadata": { },
+  "data":
+  {
+    "title": "Embryo",
+    "author": "Various Authors",
+    "description": "Where the maps get smaller as you go!",
+    "version": "0.666",
+    "iwad": "doom2.wad",
+    "pwadfiles": null,
+    "dehfiles": null,
+    "executable": "complevel9",
+	"mode": "commercial",
+    "options": null
+  }
+}

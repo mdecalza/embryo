@@ -1,0 +1,62 @@
+[PARS]
+par 1 70
+par 2 0
+par 3 0
+par 4 0
+par 5 0
+par 6 0
+par 7 0
+par 8 0
+par 9 0
+par 10 0
+par 11 0
+par 12 0
+par 13 0
+par 14 0
+par 15 0
+par 16 0
+par 17 500
+par 18 0
+par 19 0
+par 20 0
+par 21 0
+par 22 0
+par 23 0
+par 24 0
+par 25 0
+par 26 0
+par 27 45
+par 28 270
+par 29 0
+par 30 0
+par 31 0
+par 32 0
+
+[STRINGS]
+HUSTR_1 = Level 1: Moment of Conception
+HUSTR_2 = Level 2: Getting Smaller
+HUSTR_4 = Level 4: The Fallen Citadel
+HUSTR_6 = Level 6: Cesspit
+HUSTR_8 = Level 8: Silvershine Station
+HUSTR_9 = Level 9: Grounded
+HUSTR_10 = Level 10: Derelict Compound
+HUSTR_13 = Level 13: A World of Ichor
+HUSTR_14 = Level 14: Because All That You Are...
+HUSTR_15 = Level 15: AIN'T BIG ENOUGH
+HUSTR_17 = Level 17: The Wailing Fields
+HUSTR_18 = Level 18: Deluge
+HUSTR_20 = Level 20: Hell Can't Wait
+HUSTR_21 = Level 21: Gutmachine
+HUSTR_22 = Level 22: Cramped Conveyor City Conundrum
+HUSTR_25 = Level 25: Cruel Sea
+HUSTR_26 = Level 26: Empty Machine
+HUSTR_27 = Level 27: Realm of Sargentia
+HUSTR_28 = Level 28: Deliverance
+HUSTR_29 = Level 29: A Room With a View
+
+BGFLAT06 = BLOOD1
+BGFLAT11 = BLOOD2
+BGFLAT20 = BLOOD3
+BGFLAT30 = BLOOD1
+BGFLAT15 = BLOOD2
+BGFLAT31 = BLOOD3

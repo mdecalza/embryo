@@ -1,0 +1,20 @@
+# ===========================================================================
+# WadMerge Script for Release
+# ===========================================================================
+#
+# Argument 0: The build directory.
+# Argument 1: The source directory.
+# Argument 2: The output WAD.
+#
+
+create out
+datemarker out __VER__
+mergefile  out $1/wadinfo.txt
+mergefile  out $1/credits.txt
+mergefile  out $0/$3
+mergewad   out $0/$4
+mergewad   out $0/$5
+mergewad   out $0/$6
+
+finish out $0/$2
+end

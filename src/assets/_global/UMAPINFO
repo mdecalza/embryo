@@ -1,0 +1,241 @@
+map MAP01
+{
+	levelname = "Moment of Conception"
+	author = "Moustachio"
+	label = "Level 1"
+	levelpic = "CWILV00"
+	partime = 70
+	
+	skytexture = "SKY1"
+}
+
+map MAP02
+{
+	levelname = "Getting Smaller"
+	author = "TJG1289"
+	label = "Level 2"
+	levelpic = "CWILV01"
+	partime = 0
+
+	skytexture = "SKY1"
+
+	next = "MAP04"
+}
+
+map MAP04
+{
+	levelname = "The Fallen Citadel"
+	author = "Arno"
+	label = "Level 3"
+	levelpic = "CWILV03"
+	partime = 0
+
+	skytexture = "SKY1"
+
+	next = "MAP06"
+}
+
+map MAP06
+{
+	levelname = "Cesspit"
+	author = "solidago"
+	label = "Level 4"
+	levelpic = "CWILV05"
+	partime = 0
+
+	skytexture = "SKY1"
+
+	next = "MAP08"
+}
+
+map MAP08
+{
+	levelname = "Silvershine Station"
+	author = "DynamiteKaitorn"
+	label = "Level 5"
+	levelpic = "CWILV07"
+	partime = 0
+
+	skytexture = "SKY1"
+}
+
+map MAP09
+{
+	levelname = "Grounded"
+	author = "DerBlanca"
+	label = "Level 6"
+	levelpic = "CWILV08"
+	partime = 0
+
+	skytexture = "DBSKY"
+}
+
+map MAP10
+{
+	levelname = "Derelict Compound"
+	author = "Makedounia"
+	label = "Level 7"
+	levelpic = "CWILV09"
+	partime = 0
+
+	skytexture = "WRKSKY09"
+
+	next = "MAP13"
+}
+
+map MAP13 
+{
+	levelname = "A World of Ichor"
+	author = "Windy"
+	label = "Level 8"
+	levelpic = "CWILV12"
+	partime = 0
+
+	skytexture = "DIMSKY3"
+}
+
+map MAP14
+{
+	levelname = "Because All That You Are..."
+	author = "signaturereverie"
+	label = "Level 9"
+	levelpic = "CWILV13"
+	partime = 0
+
+	skytexture = "STARSKY1"
+}
+
+map MAP15 
+{
+	levelname = "AIN'T BIG ENOUGH"
+	author = "EagerBeaver"
+	label = "Level 10"
+	levelpic = "CWILV14"
+	partime = 0
+
+	skytexture = "SKY2"
+
+	next = "MAP17"
+}
+
+map MAP17
+{
+	levelname = "The Wailing Fields"
+	author = "Tangra"
+	label = "Level 11"
+	levelpic = "CWILV16"
+	partime = 500
+
+	skytexture = "SKYHX1"
+}
+
+map MAP18
+{
+	levelname = "Deluge"
+	author = "whybmonotacrab"
+	label = "Level 12"
+	levelpic = "CWILV17"
+	partime = 0
+
+	skytexture = "SKYHX3C"
+
+	next = "MAP20"
+}
+
+map MAP20
+{
+	levelname = "Hell Can't Wait"
+	author = "Mario2560"
+	label = "Level 13"
+	levelpic = "CWILV19"
+	partime = 0
+	interbackdrop = "BOSSBACK"
+
+	skytexture = "SKY2"
+}
+
+map MAP21
+{
+	levelname = "Gutmachine"
+	author = "Lina"
+	label = "Level 14"
+	levelpic = "CWILV20"
+	partime = 0
+
+	next = "MAP23"
+
+	skytexture = "DS2SKY13"
+}
+
+map MAP23
+{
+	levelname = "Cramped Conveyor City Conundrum"
+	author = "Jakub Majewski"
+	label = "Level 15"
+	levelpic = "CWILV22"
+	partime = 0
+
+	skytexture = "SKY2"
+
+	next = "MAP25"
+}
+
+map MAP25
+{
+	levelname = "Cruel Sea"
+	author = "ViolentBeetle"
+	label = "Level 16"
+	levelpic = "CWILV24"
+	partime = 0
+
+	skytexture = "SKY_25"
+}
+
+map MAP26
+{
+	levelname = "Empty Machine"
+	author = "SCF"
+	label = "Level 17"
+	levelpic = "CWILV25"
+	partime = 0
+
+	skytexture = "SKY3"
+}
+
+map MAP27
+{
+	levelname = "Realm of Sargentia"
+	author = "Raith138"
+	label = "Level 18"
+	levelpic = "CWILV26"
+	partime = 45
+
+	skytexture = "SKY3"
+}
+
+map MAP28
+{
+	levelname = "Deliverance"
+	author = "BeachThunder"
+	label = "Level 19"
+	levelpic = "CWILV27"
+	partime = 270
+
+	skytexture = "SKY3"
+}
+
+map MAP29
+{
+	levelname = "A Room With A View"
+	author = "Hydrus and BeachThunder"
+	label = "Level 20"
+	levelpic = "CWILV28"
+	partime = 0
+
+	skytexture = "DS2SKY13"
+
+	intertext = "Thank you for playing Embryo!"
+	interbackdrop = "BOSSBACK"
+
+	endpic = "CREDIT"
+}
