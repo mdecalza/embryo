@@ -103,6 +103,19 @@ map MAP14
 	partime = 0
 
 	skytexture = "STARSKY1"
+
+	intertext = "All this love is all I am.",
+		"",
+		"I have no heart, but I feel a beat.",
+		"I have no body, only the space I’ve been leased,",
+		"The warmth of blood, and the flow of water.",
+		"",
+		"All of a sudden, having been one, I am now two.",
+		"And now I am now four.",
+		"And four becomes eight.",
+		"I can feel this space constrict bit by bit.",
+		"",
+		"I will see the sunshine through."
 }
 
 map MAP15 
@@ -189,6 +202,15 @@ map MAP25
 	partime = 0
 
 	skytexture = "SKY_25"
+
+	intertext = "Waiting here feels like years.",
+		"",
+		"I’ve lost count of how many of me there are.",
+		"I can feel a heart beating. I can sense something outside.",
+		"A warm glow, and gentle whisper.",
+		"And there is always music in the air.",
+		"",
+		"Warm glow, womb gloom. Always need a little more room."
 }
 
 map MAP26
@@ -233,8 +255,30 @@ map MAP29
 	partime = 0
 
 	skytexture = "DS2SKY13"
+}
 
-	intertext = "Thank you for playing Embryo!"
+map MAP30
+{
+	levelname = "Mind Killer"
+	author = "ViolentBeetle"
+	label = "Finale"
+	levelpic = "CWILV29"
+	partime = 0
+
+	skytexture = "FIRESK03"
+
+	intertext = "I’m so new compared to you.",
+		"",
+		"Where there was once warmth, I now feel something",
+		"I don’t understand. My chest is filled with a cold chill,",
+		"and all I can do is scream, scream, scream.",
+		"And despite my mighty yell, no one seems to understand.",
+		"",
+		"And all of a sudden, I feel a caress.",
+		"The warmth returns, and I feel that gentle beat once more.",
+		"The warmth of blood, and the flow of water.",
+		"",
+		"All this love is all I am."
 	interbackdrop = "BOSSBACK"
 
 	endpic = "CREDIT"
