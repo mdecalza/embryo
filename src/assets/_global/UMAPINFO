@@ -128,7 +128,21 @@ map MAP15
 
 	skytexture = "SKY2"
 
+	intertextsecret = "Alone in the clouds, all blue",
+		"Lying on an eiderdown.",
+		"Yippee, you can't see me,",
+		"But I can you.",
+		"",
+		"You're enjoying your hot air balloon flight",
+		"when, suddenly, you spot a mysterious",
+		"balloon ahead... with ammo on it.",
+		"I guess sometimes you can count on the UAC",
+		"",
+		"Wait. There's something else...",
+		"Flying pigs? Get ready for action."
+
 	next = "MAP17"
+	nextsecret = "MAP31"
 }
 
 map MAP17
@@ -282,4 +296,19 @@ map MAP30
 	interbackdrop = "BOSSBACK"
 
 	endpic = "CREDIT"
+}
+
+map MAP31
+{
+	levelname = "Ride of the Demons"
+	author = "Moustachio"
+	label = "Secret"
+	levelpic = "CWILV30"
+	partime = 0
+
+	skytexture = "CLUDSKY5"
+
+	bossaction = Cyberdemon, 25474, 668
+
+	next = "MAP17"
 }
