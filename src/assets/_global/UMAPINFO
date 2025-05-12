@@ -25,7 +25,7 @@ map MAP03
 	levelname = "The Fallen Citadel"
 	author = "Arno"
 	label = "Level 3"
-	levelpic = "CWILV03"
+	levelpic = "CWILV02"
 	partime = 0
 
 	skytexture = "SKY1"
@@ -36,7 +36,7 @@ map MAP04
 	levelname = "Cesspit"
 	author = "solidago"
 	label = "Level 4"
-	levelpic = "CWILV05"
+	levelpic = "CWILV03"
 	partime = 0
 
 	skytexture = "SKY1"
@@ -47,7 +47,7 @@ map MAP05
 	levelname = "Silvershine Station"
 	author = "DynamiteKaitorn"
 	label = "Level 5"
-	levelpic = "CWILV07"
+	levelpic = "CWILV04"
 	partime = 0
 
 	skytexture = "SKY1"
@@ -58,7 +58,7 @@ map MAP06
 	levelname = "Grounded"
 	author = "DerBlanca"
 	label = "Level 6"
-	levelpic = "CWILV08"
+	levelpic = "CWILV05"
 	partime = 0
 
 	skytexture = "DBSKY"
@@ -69,7 +69,7 @@ map MAP07
 	levelname = "Derelict Compound"
 	author = "Makedounia"
 	label = "Level 7"
-	levelpic = "CWILV09"
+	levelpic = "CWILV06"
 	partime = 0
 
 	skytexture = "WRKSKY09"
@@ -80,7 +80,7 @@ map MAP08
 	levelname = "A World of Ichor"
 	author = "Windy"
 	label = "Level 8"
-	levelpic = "CWILV12"
+	levelpic = "CWILV07"
 	partime = 0
 }
 
@@ -89,7 +89,7 @@ map MAP09
 	levelname = "Because All That You Are..."
 	author = "signaturereverie"
 	label = "Level 9"
-	levelpic = "CWILV13"
+	levelpic = "CWILV08"
 	partime = 0
 
 	skytexture = "STARSKY1"
@@ -142,7 +142,7 @@ map MAP10
 	levelname = "The Wailing Fields"
 	author = "Tangra"
 	label = "Level 11"
-	levelpic = "CWILV16"
+	levelpic = "CWILV09"
 	partime = 500
 
 	skytexture = "SKYHX1"
@@ -153,7 +153,7 @@ map MAP11
 	levelname = "Deluge"
 	author = "whybmonotacrab"
 	label = "Level 12"
-	levelpic = "CWILV17"
+	levelpic = "CWILV10"
 	partime = 0
 
 	skytexture = "SKYHX3C"
@@ -164,7 +164,7 @@ map MAP12
 	levelname = "Hell Can't Wait"
 	author = "Mario2560"
 	label = "Level 13"
-	levelpic = "CWILV19"
+	levelpic = "CWILV11"
 	partime = 0
 	interbackdrop = "BOSSBACK"
 
@@ -176,7 +176,7 @@ map MAP13
 	levelname = "Gutmachine"
 	author = "Lina"
 	label = "Level 14"
-	levelpic = "CWILV20"
+	levelpic = "CWILV12"
 	partime = 0
 
 	skytexture = "DS2SKY13"
@@ -187,7 +187,7 @@ map MAP14
 	levelname = "Cramped Conveyor City Conundrum"
 	author = "Jakub Majewski"
 	label = "Level 15"
-	levelpic = "CWILV22"
+	levelpic = "CWILV13"
 	partime = 0
 
 	skytexture = "SKY2"
@@ -200,7 +200,7 @@ map MAP16
 	levelname = "Cruel Sea"
 	author = "ViolentBeetle"
 	label = "Level 16"
-	levelpic = "CWILV24"
+	levelpic = "CWILV15"
 	partime = 0
 
 	skytexture = "SKY_25"
@@ -220,7 +220,7 @@ map MAP17
 	levelname = "Empty Machine"
 	author = "SCF"
 	label = "Level 17"
-	levelpic = "CWILV25"
+	levelpic = "CWILV16"
 	partime = 0
 
 	skytexture = "SKY3"
@@ -231,7 +231,7 @@ map MAP18
 	levelname = "Realm of Sargentia"
 	author = "Raith138"
 	label = "Level 18"
-	levelpic = "CWILV26"
+	levelpic = "CWILV17"
 	partime = 45
 
 	skytexture = "SKY3"
@@ -242,7 +242,7 @@ map MAP19
 	levelname = "Deliverance"
 	author = "BeachThunder"
 	label = "Level 19"
-	levelpic = "CWILV27"
+	levelpic = "CWILV18"
 	partime = 270
 
 	skytexture = "SKY3"
@@ -253,7 +253,7 @@ map MAP20
 	levelname = "A Room With A View"
 	author = "Hydrus and BeachThunder"
 	label = "Level 20"
-	levelpic = "CWILV28"
+	levelpic = "CWILV19"
 	partime = 0
 
 	skytexture = "DS2SKY13"
@@ -264,7 +264,7 @@ map MAP21
 	levelname = "Mind Killer"
 	author = "ViolentBeetle"
 	label = "Finale"
-	levelpic = "CWILV29"
+	levelpic = "CWILV20"
 	partime = 0
 
 	skytexture = "FIRESK03"
