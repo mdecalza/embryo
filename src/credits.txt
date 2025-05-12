@@ -1,5 +1,87 @@
 EMBRYO
 RESOURCE CREDITS
 
-Intermission texts: Moustachio
-(Interpolating lyrics from the songs "Embryo" and "Flaming" by Pink Floyd)
+== GRAPHICS ==
+
+Title screen: Moustachio
+Intermission screen: Moustachio
+Text screen: Moustachio
+M_DOOM: Moustachio
+
+== SKIES ==
+
+MAP06: Pixel art by CopperSunset, edited and color balanced by DerBlanca
+MAP07: WRKSKY09 from Mechadon's Box o' Skies
+MAP08: DIMSKY3 from Mechadon's Box o' Skies
+MAP09: Edited STARSKY1 by signaturereverie from Mechadon's Box o' Skies
+MAP11: SKYHX1, from 32in24-15.tex.v2.wad
+MAP12: SKYHX3C from 32in24-15.wad
+MAP14: DS2SKY13 from Mechadon's Box o' Skies
+MAP16: From Mechadon's Box o' Skies
+MAP20: DS2SKY13 from Mechadon's Box o' Skies
+MAP21: From Mek's Box o' Skies, slightly modified
+MAP31: CLUDSKY5 from Mechadon's Box o' Skies
+
+Original DOOM II skies by id Software.
+
+== MAPS ==
+
+MAP01: Moustachio
+MAP02: TJG1289
+MAP03: Arno
+MAP04: solidago
+MAP05: DynamiteKaitorn
+MAP06: DerBlanca
+MAP07: Makedounia
+MAP08: Windy
+MAP09: signaturereverie
+MAP10: EagerBeaver
+MAP11: Tangra
+MAP12: whybmonotacrab
+MAP13: Mario2560
+MAP14: Lina
+MAP15: Jakub Majewski
+MAP16: ViolentBeetle
+MAP17: SCF
+MAP18: Raith138
+MAP19: BeachThunder
+MAP20: Hydrus and BeachThunder
+MAP21: ViolentBeetle
+MAP31: Moustachio
+
+== MUSIC ==
+
+MAP01: "Emulations" by Psyrus
+MAP02: "Stealth Mode" by Jimmy
+MAP03: "Desecrated Village" by Jimmy (from the soundtrack of the Hexen mod Scattered Evil)
+MAP04: "Let The Wicked Be No More" by Lippeth
+MAP05: "Labrat" from Jazz Jackrabbit 2 [source: VGMusic.com]
+MAP06: "Haze" by Ito Emily (from Kidnapped Girl, sequenced by me)
+MAP07: "Apoplexy Tanks" from Mario Forever, sequenced by Lu9
+MAP08: "Become the Hunted" by Jimmy Paddock
+MAP09: "Floating Museum" from Ghost in the Shell (taken from AUGER;ZENITH MAP13)
+MAP10: "This Town Ain't Big Enough for Both of Us" by Sparks, downloaded from FreeMIDI.org, slightly modified by Ajoura
+MAP11: "At the Graves" by King Diamond
+MAP12: "Wake of a Dream" by Ribbiks
+MAP13: "Plugged In" by Bucket (Plutonia MIDI pack)
+MAP14: "Docked In" by Varis Alpha
+MAP15: "Escape" - Necros / FM, aka SONG0.S3M from In Pursuit of Greed
+MAP16: "Escaping the Darkness" by Myrgharok
+MAP17: "SA-X Arrival theme" from Metroid Fusion (according to the Sunder credits)
+MAP18: "Shawn's Got the Shotgun" by Bobby Prince
+MAP19: "City of Prisms" by Dial-up for Murder from MIDI Nightmares
+MAP20: "Path of Destruction" by Mark Klem (from Requiem)
+MAP21: "You're Winner" by Lippeth
+MAP31: "Ride of the Valkyries" by Richard Wagner
+
+== MISC ==
+
+Project lead: Moustachio
+Par times: Moustachio
+Intermission texts: Moustachio (interpolating lyrics from the songs "Embryo" and "Flaming" by Pink Floyd)
+
+== SPECIAL THANKS ==
+ViolentBeetle, BeachThunder for helping finish this project up.
+Lina, Tangra, apichatpong, Arno, BeachThunder, Hydrus, signaturereverie, solidago, hotzin for playtesting.
+Pink Floyd for the song that inspired this wad, "Embryo".
+id Software for DOOM II.

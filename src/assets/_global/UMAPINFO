@@ -94,18 +94,14 @@ map MAP09
 
 	skytexture = "STARSKY1"
 
-	intertext = "All this love is all I am.",
+	intertext = "Warm glow, moon bloom,",
+		"always need a little more room...",
 		"",
-		"I have no heart, but I feel a beat.",
-		"I have no body, only the space I’ve been leased,",
-		"The warmth of blood, and the flow of water.",
+		"Everything seems to be getting smaller.",
+		"What kind of sick trick are those demons",
+		"playing now?",
 		"",
-		"All of a sudden, having been one, I am now two.",
-		"And now I am now four.",
-		"And four becomes eight.",
-		"I can feel this space constrict bit by bit.",
-		"",
-		"I will see the sunshine through."
+		"No matter. Time to get back to work."
 
 	next = "MAP15"
 }
@@ -120,10 +116,10 @@ map MAP15
 
 	skytexture = "SKY2"
 
-	intertextsecret = "Alone in the clouds, all blue",
+	intertextsecret = "Alone in the clouds, all blue.",
 		"Lying on an eiderdown.",
 		"Yippee, you can't see me,",
-		"But I can you.",
+		"but I can you.",
 		"",
 		"You're enjoying your hot air balloon flight",
 		"when, suddenly, you spot a mysterious",
@@ -131,7 +127,8 @@ map MAP15
 		"I guess sometimes you can count on the UAC",
 		"",
 		"Wait. There's something else...",
-		"Flying pigs? Get ready for action."
+		"Pigs on the wing?",
+		"Get ready for action."
 
 	next = "MAP10"
 	nextsecret = "MAP31"
@@ -205,14 +202,15 @@ map MAP16
 
 	skytexture = "SKY_25"
 
-	intertext = "Waiting here seems like years.",
+	intertext = "Waiting here seems like years...",
 		"",
-		"I’ve lost count of how many of me there are.",
-		"I can feel a heart beating. I can sense something outside.",
+		"Losing count of how many demons there are...",
+		"I can sense something outside.",
 		"A warm glow, and gentle whisper.",
 		"And there is always music in the air.",
 		"",
-		"Warm glow, womb gloom. Always need a little more room."
+		"All around I hear strange sounds",
+		"come drifting 'round my ears."
 }
 
 map MAP17
@@ -269,18 +267,15 @@ map MAP21
 
 	skytexture = "FIRESK03"
 
-	intertext = "I’m so new compared to you.",
+	intertext = "Your chest fills with a cold chill,",
+		"and all you can do is scream.",
 		"",
-		"Where there was once warmth, I now feel something",
-		"I don’t understand. My chest is filled with a cold chill,",
-		"and all I can do is scream, scream, scream.",
-		"And despite my mighty yell, no one seems to understand.",
+		"The chaos is over, and you feel reborn.",
+		"The warmth of blood...",
+		"You made the demons pay with their own.",
 		"",
-		"And all of a sudden, I feel a caress.",
-		"The warmth returns, and I feel that gentle beat once more.",
-		"The warmth of blood, and the flow of water.",
-		"",
-		"All this love is all I am."
+		"Dark the night and long the night,",
+		"I feel my dawn is near."
 	interbackdrop = "BOSSBACK"
 
 	endpic = "CREDIT"
