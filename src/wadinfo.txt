@@ -1,25 +1,34 @@
 ===========================================================================
-Advanced engine needed  : Boom v2.02 + UMAPINFO
+Advanced engine needed  : Boom v2.02
 Primary purpose         : Single play
 ===========================================================================
-Title                   : Embryo
-Filename                : embryo.WAD
-Release date            : Mnth. Day, Year
+Title                   : Embryo [RC2]
+Filename                : embryo_0.2.wad
+Release date            : May 11, 2025
 Author                  : Various Authors
-Other Files By Author   : Moustachio has led: intercep.wad, intercep2.wad
+Other Files By Author   : Moustachio has also led: intercep.wad, intercep2.wad
 Misc. Author Info       : Moustachio, TJG1289, Arno, solidago, DynamiteKaitorn,
                           DerBlanca, Makedounia, Windy, signaturereverie,
                           EagerBeaver, Tangra, whybmonotacrab, Mario2560, Lina,
                           Jakub Majewski, ViolentBeetle, SCF, Raith138,
                           BeachThunder, Hydrus
 
-Description             : Where the maps get smaller as you go!
+Description             : A mapset where the maps get smaller as you go!
 
-Additional Credits to   : ADD'L CREDITS HERE
+                          We set out to create a straightforward Boom wad where
+                          the catch is simple. Each map is smaller in size
+                          than the last map. The futher you go, the more your
+                          skills will be tested until you're stuck in a box
+                          BFGing for your life.
+
+                          If this sounds like your thing, then what are you
+                          waiting for? Download Embryo and get to slaughterin'!
+
+Additional Credits to   : Full resource credits in credits.txt.
 ===========================================================================
 * What is included *
 
-New levels              : Number of levels
+New levels              : 22
 Sounds                  : Yes
 Music                   : Yes
 Graphics                : Yes
@@ -32,9 +41,7 @@ Other files required    : None
 * Play Information *
 
 Game                    : Doom 2
-Map #                   : MAP01, MAP02, MAP04, MAP06, MAP08, MAP09, MAP10,
-                          MAP13, MAP14, MAP15, MAP17, MAP18, MAP20, MAP21,
-                          MAP23, MAP25, MAP26, MAP27, MAP28, MAP29
+Map #                   : MAP01 - MAP21, MAP31
 Single Player           : Designed for
 Cooperative 2-4 Player  : No
 Deathmatch 2-4 Player   : No
@@ -44,27 +51,28 @@ Difficulty Settings     : Yes
 
 * Construction *
 
-Base                    : Only stock DOOM II assets used
-Build Time              : 1.5 years
+Base                    : Stock DOOM II + some new skies
+Build Time              : About 2 years
 Editor(s) used          : Ultimate Doom Builder, SLADE 3
 Known Bugs              : 
-May Not Run With        : Ports that don't support Boom v2.02 and UMAPINFO
-Tested With             : DSDA-Doom, Woof!, Odamex
+May Not Run With        : Ports that don't support Boom v2.02
+Tested With             : DSDA-Doom v0.29.0, Woof!, Odamex, GZDoom
 
 
 * Copyright / Permissions *
 
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
-International License. To view a copy of this license, visit
-https://creativecommons.org/licenses/by-sa/4.0/
+This work is licensed under the Creative Commons Attribution-NonCommercial-
+ShareAlike 4.0 International License. To view a copy of this license, visit
+https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 You are free to copy and redistribute the material in any medium or format;
-and remix, transform, and build upon the material for any purpose, even
+and remix, transform, and build upon the material for any purpose, EXCEPT
 commercially. If you do so, you must give appropriate credit, provide a link
 to the license, and indicate if changes were made. You may do so in any
 reasonable manner, but not in any way that suggests the licensor endorses you
-or your use. If you remix, transform, or build upon the material, you MUST
-distribute your contributions under the same license as the original.
+or your use. You may NOT use the material for commercial purposes. If you 
+remix, transform, or build upon the material, you MUST distribute your 
+contributions under the same license as the original.
 
 
 * Where to get the file that this text file describes *
