@@ -51,6 +51,8 @@ MAP31: Moustachio
 
 == MUSIC ==
 
+Title, intermission, and text screens: "Embryo" by Pink Floyd, sequenced to MIDI
+
 MAP01: "Emulations" by Psyrus
 MAP02: "Stealth Mode" by Jimmy
 MAP03: "Desecrated Village" by Jimmy (from the soundtrack of the Hexen mod Scattered Evil)
