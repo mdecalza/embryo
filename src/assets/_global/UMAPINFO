@@ -18,11 +18,9 @@ map MAP02
 	partime = 0
 
 	skytexture = "SKY1"
-
-	next = "MAP04"
 }
 
-map MAP04
+map MAP03
 {
 	levelname = "The Fallen Citadel"
 	author = "Arno"
@@ -31,11 +29,9 @@ map MAP04
 	partime = 0
 
 	skytexture = "SKY1"
-
-	next = "MAP06"
 }
 
-map MAP06
+map MAP04
 {
 	levelname = "Cesspit"
 	author = "solidago"
@@ -44,11 +40,9 @@ map MAP06
 	partime = 0
 
 	skytexture = "SKY1"
-
-	next = "MAP08"
 }
 
-map MAP08
+map MAP05
 {
 	levelname = "Silvershine Station"
 	author = "DynamiteKaitorn"
@@ -59,7 +53,7 @@ map MAP08
 	skytexture = "SKY1"
 }
 
-map MAP09
+map MAP06
 {
 	levelname = "Grounded"
 	author = "DerBlanca"
@@ -70,7 +64,7 @@ map MAP09
 	skytexture = "DBSKY"
 }
 
-map MAP10
+map MAP07
 {
 	levelname = "Derelict Compound"
 	author = "Makedounia"
@@ -79,22 +73,18 @@ map MAP10
 	partime = 0
 
 	skytexture = "WRKSKY09"
-
-	next = "MAP13"
 }
 
-map MAP13 
+map MAP08 
 {
 	levelname = "A World of Ichor"
 	author = "Windy"
 	label = "Level 8"
 	levelpic = "CWILV12"
 	partime = 0
-
-	skytexture = "DIMSKY3"
 }
 
-map MAP14
+map MAP09
 {
 	levelname = "Because All That You Are..."
 	author = "signaturereverie"
@@ -116,9 +106,11 @@ map MAP14
 		"I can feel this space constrict bit by bit.",
 		"",
 		"I will see the sunshine through."
+
+	next = "MAP15"
 }
 
-map MAP15 
+map MAP15
 {
 	levelname = "AIN'T BIG ENOUGH"
 	author = "EagerBeaver"
@@ -141,11 +133,11 @@ map MAP15
 		"Wait. There's something else...",
 		"Flying pigs? Get ready for action."
 
-	next = "MAP17"
+	next = "MAP10"
 	nextsecret = "MAP31"
 }
 
-map MAP17
+map MAP10
 {
 	levelname = "The Wailing Fields"
 	author = "Tangra"
@@ -156,7 +148,7 @@ map MAP17
 	skytexture = "SKYHX1"
 }
 
-map MAP18
+map MAP11
 {
 	levelname = "Deluge"
 	author = "whybmonotacrab"
@@ -165,11 +157,9 @@ map MAP18
 	partime = 0
 
 	skytexture = "SKYHX3C"
-
-	next = "MAP20"
 }
 
-map MAP20
+map MAP12
 {
 	levelname = "Hell Can't Wait"
 	author = "Mario2560"
@@ -181,7 +171,7 @@ map MAP20
 	skytexture = "SKY2"
 }
 
-map MAP21
+map MAP13
 {
 	levelname = "Gutmachine"
 	author = "Lina"
@@ -189,12 +179,10 @@ map MAP21
 	levelpic = "CWILV20"
 	partime = 0
 
-	next = "MAP23"
-
 	skytexture = "DS2SKY13"
 }
 
-map MAP23
+map MAP14
 {
 	levelname = "Cramped Conveyor City Conundrum"
 	author = "Jakub Majewski"
@@ -204,10 +192,10 @@ map MAP23
 
 	skytexture = "SKY2"
 
-	next = "MAP25"
+	next = "MAP16"
 }
 
-map MAP25
+map MAP16
 {
 	levelname = "Cruel Sea"
 	author = "ViolentBeetle"
@@ -217,7 +205,7 @@ map MAP25
 
 	skytexture = "SKY_25"
 
-	intertext = "Waiting here feels like years.",
+	intertext = "Waiting here seems like years.",
 		"",
 		"I’ve lost count of how many of me there are.",
 		"I can feel a heart beating. I can sense something outside.",
@@ -227,7 +215,7 @@ map MAP25
 		"Warm glow, womb gloom. Always need a little more room."
 }
 
-map MAP26
+map MAP17
 {
 	levelname = "Empty Machine"
 	author = "SCF"
@@ -238,7 +226,7 @@ map MAP26
 	skytexture = "SKY3"
 }
 
-map MAP27
+map MAP18
 {
 	levelname = "Realm of Sargentia"
 	author = "Raith138"
@@ -249,7 +237,7 @@ map MAP27
 	skytexture = "SKY3"
 }
 
-map MAP28
+map MAP19
 {
 	levelname = "Deliverance"
 	author = "BeachThunder"
@@ -260,7 +248,7 @@ map MAP28
 	skytexture = "SKY3"
 }
 
-map MAP29
+map MAP20
 {
 	levelname = "A Room With A View"
 	author = "Hydrus and BeachThunder"
@@ -271,7 +259,7 @@ map MAP29
 	skytexture = "DS2SKY13"
 }
 
-map MAP30
+map MAP21
 {
 	levelname = "Mind Killer"
 	author = "ViolentBeetle"
@@ -310,5 +298,5 @@ map MAP31
 
 	bossaction = Cyberdemon, 25474, 668
 
-	next = "MAP17"
+	next = "MAP10"
 }
