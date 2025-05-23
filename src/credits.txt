@@ -57,7 +57,7 @@ MAP01: "Emulations" by Psyrus
 MAP02: "Stealth Mode" by Jimmy
 MAP03: "Desecrated Village" by Jimmy (from the soundtrack of the Hexen mod Scattered Evil)
 MAP04: "Let The Wicked Be No More" by Lippeth
-MAP05: "Labrat" from Jazz Jackrabbit 2 [source: VGMusic.com]
+MAP05: "Lab Rat" from Jazz Jackrabbit 2 [source: VGMusic.com]
 MAP06: "Haze" by Ito Emily (from Kidnapped Girl, sequenced by me)
 MAP07: "Apoplexy Tanks" from Mario Forever, sequenced by Lu9
 MAP08: "Become the Hunted" by Jimmy Paddock
