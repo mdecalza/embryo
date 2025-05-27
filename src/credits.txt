@@ -76,6 +76,23 @@ MAP20: "Path of Destruction" by Mark Klem (from Requiem)
 MAP21: "You're Winner" by Lippeth
 MAP31: "Ride of the Valkyries" by Richard Wagner
 
+== PLAYTESTING ==
+
+Lina
+Tangra
+apichatpong
+Arno
+BeachThunder
+Hydrus
+signaturereverie
+solidago
+hotzin
+Fiendish
+NuMetalManiak
+erzboesewicht
+ViolentBeetle
+Moustachio
+
 == MISC ==
 
 Project lead: Moustachio
@@ -84,6 +101,5 @@ Intermission texts: Moustachio (interpolating lyrics from the songs "Embryo" and
 
 == SPECIAL THANKS ==
 ViolentBeetle, BeachThunder for helping finish this project up.
-Lina, Tangra, apichatpong, Arno, BeachThunder, Hydrus, signaturereverie, solidago, hotzin for playtesting.
 Pink Floyd for the song that inspired this wad, "Embryo".
 id Software for DOOM II.
