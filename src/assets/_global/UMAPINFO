@@ -111,11 +111,12 @@ map MAP15
 	levelname = "AIN'T BIG ENOUGH"
 	author = "EagerBeaver"
 	label = "Level 10"
-	levelpic = "CWILV14"
+	levelpic = "CWILV09"
 	partime = 0
 
 	skytexture = "SKY2"
 
+	interbackdrop = "BOSSBACK"
 	intertextsecret = "Alone in the clouds, all blue.",
 		"Lying on an eiderdown.",
 		"Yippee, you can't see me,",
@@ -124,7 +125,7 @@ map MAP15
 		"You're enjoying your hot air balloon flight",
 		"when, suddenly, you spot a mysterious",
 		"balloon ahead... with ammo on it.",
-		"I guess sometimes you can count on the UAC",
+		"I guess sometimes you can count on the UAC.",
 		"",
 		"Wait. There's something else...",
 		"Pigs on the wing?",
@@ -139,7 +140,7 @@ map MAP10
 	levelname = "The Wailing Fields"
 	author = "Tangra"
 	label = "Level 11"
-	levelpic = "CWILV09"
+	levelpic = "CWILV10"
 	partime = 500
 
 	skytexture = "SKYHX1"
@@ -150,7 +151,7 @@ map MAP11
 	levelname = "Deluge"
 	author = "whybmonotacrab"
 	label = "Level 12"
-	levelpic = "CWILV10"
+	levelpic = "CWILV11"
 	partime = 0
 
 	skytexture = "SKYHX3C"
@@ -161,11 +162,13 @@ map MAP12
 	levelname = "Hell Can't Wait"
 	author = "Mario2560"
 	label = "Level 13"
-	levelpic = "CWILV11"
+	levelpic = "CWILV12"
 	partime = 0
-	interbackdrop = "BOSSBACK"
+	interbackdrop = "INTERPIC"
 
 	skytexture = "SKY2"
+
+	intertext = clear
 }
 
 map MAP13
@@ -173,7 +176,7 @@ map MAP13
 	levelname = "Gutmachine"
 	author = "Lina"
 	label = "Level 14"
-	levelpic = "CWILV12"
+	levelpic = "CWILV13"
 	partime = 0
 
 	skytexture = "DS2SKY13"
@@ -184,7 +187,7 @@ map MAP14
 	levelname = "Cramped Conveyor City Conundrum"
 	author = "Jakub Majewski"
 	label = "Level 15"
-	levelpic = "CWILV13"
+	levelpic = "CWILV14"
 	partime = 0
 
 	skytexture = "SKY2"
@@ -199,6 +202,7 @@ map MAP16
 	label = "Level 16"
 	levelpic = "CWILV15"
 	partime = 0
+	interbackdrop = "INTERPIC"
 
 	skytexture = "SKY_25"
 
@@ -255,6 +259,8 @@ map MAP20
 	partime = 0
 
 	skytexture = "DS2SKY13"
+
+	intertext = clear
 }
 
 map MAP21
@@ -276,9 +282,10 @@ map MAP21
 		"",
 		"Dark the night and long the night,",
 		"I feel my dawn is near."
-	interbackdrop = "BOSSBACK"
+	interbackdrop = "INTERPIC"
 
-	endpic = "CREDIT"
+	endgame = true
+	endpic = "BOSSBACK"
 }
 
 map MAP31
