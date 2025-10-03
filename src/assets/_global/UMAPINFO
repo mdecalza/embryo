@@ -282,10 +282,10 @@ map MAP21
 		"",
 		"Dark the night and long the night,",
 		"I feel my dawn is near."
-	interbackdrop = "INTERPIC"
+	interbackdrop = "BOSSBACK"
 
 	endgame = true
-	endpic = "BOSSBACK"
+	endpic = "CREDIT"
 }
 
 map MAP31
