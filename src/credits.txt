@@ -98,6 +98,7 @@ Moustachio
 Project lead: Moustachio
 Par times: Moustachio
 Intermission texts: Moustachio (interpolating lyrics from the songs "Embryo" and "Flaming" by Pink Floyd)
+Title screen demos: Moustachio
 
 == SPECIAL THANKS ==
 ViolentBeetle, BeachThunder for helping finish this project up.
