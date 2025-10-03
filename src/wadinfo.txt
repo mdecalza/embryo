@@ -2,9 +2,9 @@
 Advanced engine needed  : Boom v2.02
 Primary purpose         : Single play
 ===========================================================================
-Title                   : Embryo [RC2]
-Filename                : embryo_0.2.wad
-Release date            : May 11, 2025
+Title                   : Embryo
+Filename                : embryo.wad
+Release date            : October 10, 2025
 Author                  : Various Authors
 Other Files By Author   : Moustachio has also led: intercep.wad, intercep2.wad
 Misc. Author Info       : Moustachio, TJG1289, Arno, solidago, DynamiteKaitorn,
