@@ -4,7 +4,7 @@ Primary purpose         : Single play
 ===========================================================================
 Title                   : Embryo
 Filename                : embryo.wad
-Release date            : October 10, 2025
+Release date            : October 14, 2025
 Author                  : Various Authors
 Other Files By Author   : Moustachio has also led: intercep.wad, intercep2.wad
 Misc. Author Info       : Moustachio, TJG1289, Arno, solidago, DynamiteKaitorn,
@@ -17,7 +17,7 @@ Description             : A mapset where the maps get smaller as you go!
 
                           We set out to create a straightforward Boom wad where
                           the catch is simple. Each map is smaller in size
-                          than the last map. The futher you go, the more your
+                          than the last map. The farther you go, the more your
                           skills will be tested until you're stuck in a box
                           BFGing for your life.
 
