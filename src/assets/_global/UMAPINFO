@@ -6,7 +6,7 @@ map MAP01
 	levelpic = "CWILV00"
 	partime = 70
 	
-	skytexture = "SKY1"
+	skytexture = "M01SKY"
 }
 
 map MAP02
